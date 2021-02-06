@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "what-to-eat-55dd9"
+  },
+  "targets": {
+    "what-to-eat-55dd9": {
+      "hosting": {
+        "app": [
+          "wheretodine"
+        ]
+      }
+    }
+  }
+}
