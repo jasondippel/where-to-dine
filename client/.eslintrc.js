@@ -5,7 +5,31 @@ const rules = {
   'import/order': [
     'error',
     {
-      groups: ['builtin', 'external', 'internal'],
+      groups: ['builtin', 'external', 'index', 'internal'],
+      pathGroups: [
+        {
+          pattern: 'react',
+          group: 'external',
+          position: 'before',
+        },
+        {
+          pattern: 'components',
+          group: 'internal',
+        },
+        {
+          pattern: 'pages/**',
+          group: 'internal',
+        },
+        {
+          pattern: 'helpers/**',
+          group: 'internal',
+        },
+        {
+          pattern: 'styles/**',
+          group: 'internal',
+        },
+      ],
+      pathGroupsExcludedImportTypes: ['react'],
       'newlines-between': 'never',
       alphabetize: {
         order: 'asc',
@@ -43,9 +67,9 @@ const rules = {
   'unicorn/filename-case': [
     'error',
     {
-      'cases': {
-        'camelCase': true,
-        'pascalCase': true,
+      cases: {
+        camelCase: true,
+        pascalCase: true,
       },
     },
   ],
@@ -66,7 +90,7 @@ const otherConfigs = {
   settings: {
     'import/resolver': {
       node: {
-        paths: ['.'],
+        paths: ['node_modules', 'src/'],
       },
     },
   },
